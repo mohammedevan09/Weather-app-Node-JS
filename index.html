@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="wave -one"></div>
+        <div class="wave -two"></div>
+        <div class="wave -three"></div>
+
+        <div id="weatherCon">
+            <i class="fa-solid fa-sun" style="color: #eccc68;"></i>
+        </div>
+        <div class="info">
+            <h2 class="location"><i class="fa-solid fa-street-view"></i>Dhaka, BD</h2>
+            <p id="date">WED | OCT 23 | 10:49 AM</p>
+            <h1 class="temp">301.14</h1>
+            <h3 class="temp_min_max">Min 301.14 | Max 301.14</h3>
+        </div>
+    </div>
+</body>
+<script>
+    const currentDate = document.getElementById("date")
+    const weatherCon = document.getElementById("weatherCon")
+
+    const tempStatus = "Haze"
+    // console.log(tempStatus)
+    if (tempStatus == "Sunny") {
+        weatherCon.innerHTML = " <i class='fa-solid fa-sun' style='color: #eccc68;'></i>"
+    } else if (tempStatus == "Clouds") {
+        weatherCon.innerHTML = "<i class='fa-duotone fa-clouds'></i>"
+    } else if (tempStatus == "Rainy") {
+        weatherCon.innerHTML = "<i class='fa-solid fa-cloud-showers-water'></i>"
+    } else {
+        weatherCon.innerHTML = " <i class='fa-solid fa-sun' style='color: #eccc68;'></i>"
+    }
+
+    const getCurrentTime = () => {
+        const date = new Date()
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const weekday = ["Sun", "Mon", "Tues", "Wednes", "Thurs", "Fri", "Satur"];
+
+        let week = weekday[date.getDay()]
+
+        let month = months[date.getMonth()];
+        let day = date.getDate()
+        let hours = date.getHours()
+        let minute = date.getMinutes()
+
+        let period = ""
+
+        if (hours > 12) {
+            period = "PM"
+            hours -= 12
+        } else {
+            period = "AM"
+        }
+
+        minute < 10 ? "0" + minute : minute
+
+        currentDate.innerHTML = `${week} | ${month} ${day} | ${hours}:${minute} ${period}`
+    }
+
+
+    getCurrentTime()
+</script>
+
+</html>

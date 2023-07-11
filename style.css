@@ -1,0 +1,87 @@
+body {
+  display: grid;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+}
+
+.wrapper {
+  display: inline-block;
+  background: white;
+  box-shadow: 5px 5px 5px black, inset 5px 5px 5px black;
+  padding: 44px 25px;
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.fa-solid.fa-sun {
+  font-size: 70px;
+  margin: 0 0 187px 0;
+  position: relative;
+  z-index: 5;
+}
+
+.info {
+  background: #9ad0ff;
+  width: 100%;
+  padding: 5px;
+  position: relative;
+}
+
+#date {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wave.-one {
+  width: 200px;
+  height: 218px;
+  background-color: #cbe3f8;
+  animation: rotateAnimation 10s linear infinite;
+  position: absolute;
+  top: 250px;
+  width: 457px;
+  height: 330px;
+  z-index: 0;
+  right: -85.333px;
+  border-radius: 70%;
+}
+
+.wave.-two {
+  width: 200px;
+  height: 218px;
+  background-color: #5ca7e9;
+  animation: rotateAnimation 10s linear infinite;
+  position: absolute;
+  top: 250px;
+  width: 457px;
+  height: 360px;
+  z-index: 0;
+  right: -85.333px;
+  border-radius: 50%;
+}
+
+.wave.-three {
+  width: 200px;
+  height: 218px;
+  background-color: #9ad0ff;
+  animation: rotateAnimation 10s linear infinite;
+  position: absolute;
+  top: 250px;
+  width: 437px;
+  height: 380px;
+  z-index: 0;
+  right: -85.333px;
+  border-radius: 50%;
+}
